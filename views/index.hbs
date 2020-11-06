@@ -1,0 +1,25 @@
+<form action="/" method="POST">
+    <label for="nameStartsWith"></label>
+    <input type="text" name="nameStartsWith" id="nameStartsWith">
+    <input type="hidden" name="offset" value="0">
+    
+    <button type="submit">Submit</button>
+</form>
+
+<ul>
+    {{#each nameArray}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+
+<form action="/" method="POST">
+    <input type="hidden" name="nameStartsWith" value="{{nameStartsWith}}">
+    <input type="hidden" name="offset" value="{{prevOffset}}">
+    <button type="submit">Previous</button>
+</form>
+
+<form action="/" method="POST">
+    <input type="hidden" name="nameStartsWith" value="{{nameStartsWith}}">
+    <input type="hidden" name="offset" value="{{nextOffset}}">
+    <button type="submit">Next</button>
+</form>
